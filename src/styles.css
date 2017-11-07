@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import "~font-awesome/css/font-awesome.css";
+
+@media (min-width: 576px)  {
+
+    .jumbotron {
+        padding: 1rem 2rem;
+    }
+}
+
+.text-cross {
+    text-decoration: line-through;
+}

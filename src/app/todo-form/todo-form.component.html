@@ -1,0 +1,15 @@
+<form class="form-inline justify-content-center" #todoForm="ngForm" (ngSubmit)="addTodoToList(todoForm)">
+  <div class="form-group">
+    <label class="mr-sm-2" for="todoStatus">Todo Status</label>
+    <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="todoStatus" required name="todoStatus" [(ngModel)]="todoStatus">
+      <option selected value="">Choose...</option>
+      <option value="Completed">Completed</option>
+      <option value="InCompleted">InCompleted</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="todo">Todo </label>
+    <input type="text" id="todo"  class="form-control mx-sm-3" required name="todo" [(ngModel)]="todo"> 
+  </div>
+  <button class="btn btn-primary" type="submit" [ngClass]="{'disabled': !checkValid()}">Create Todo</button>
+</form>

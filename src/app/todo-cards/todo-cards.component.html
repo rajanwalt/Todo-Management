@@ -1,0 +1,37 @@
+<h1 class="text-center">
+  User Card Details
+</h1>
+<div class="container-fluid">
+  <div class="table-responsive">
+    <table class="table table-bordered table-condensed table-sm">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Username</th>
+          <th>Email</th>
+          <th>Address</th>
+          <th>Phone</th>
+          <th>Website</th>
+          <th>Company</th>
+          <th>View Todo</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let item of userCards">
+            <td>{{item.id}}</td>
+            <td>{{item.name}}</td>
+            <td>{{item.username}}</td>
+            <td>{{item.email}}</td>
+            <td>{{item.address.suite + ',' + item.address.street+ ',' + item.address.city+ ',' + item.address.zipcode + ',' + item.address.geo.lat + ',' + item.address.geo.lng}}</td>
+            <td>{{item.phone}}</td>
+            <td>{{item.website}}</td>
+            <td>{{item.company.name + ',' + item.company.catchPhrase + ',' + item.company.bs}}</td>
+            <td>
+                <a class="btn btn-primary btn-md" [routerLink]= "['/todo-lists',item.id]"  role="button">View Todo</a>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+    </div>
+</div>

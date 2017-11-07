@@ -1,0 +1,24 @@
+
+<div class="container mt-3 mb-3" style="height: 400px; overflow-y: scroll;">
+  <ul class="list-group">
+    <app-todo-item *ngFor="let todo of todoList; let i=index" [todo]="todo" [todoIndex]="i+1" (activeTodo)="getActiveTodo($event);activeIndex=i;" [currentActiveTodo]="activeTodo"></app-todo-item>
+  </ul>
+</div>
+<div class="container ">
+  <div class="text-center">
+    <button class="btn btn-primary" (click)="showTodoForm=!showTodoForm;">
+        ADD TODO
+    </button>
+
+    <button class="btn btn-primary" (click)="deleteTodo()">
+        DELETE TODO
+    </button>
+
+    <button class="btn btn-primary" (click)= "changeStatus()">
+        CHANGE STATUS
+    </button>
+  </div>
+</div>
+<div class="container mt-2 pt-3 pb-3 bg-warning text-white" [hidden]="!showTodoForm">
+    <app-todo-form (todoData)="getNewTodo($event)"></app-todo-form>
+</div>

@@ -1,0 +1,8 @@
+<li class="list-group-item" style= "cursor:pointer" [ngClass]="{'bg-primary' : (active && currentActiveTodo?.id===todo.id) }" (click)="getSelectedTodo(); active= !active;" clickable>
+  <span>
+    {{todoIndex}} . 
+  </span>
+  <span [ngClass]="{ 'text-cross' : todo.completed}">
+      {{todo.title}}
+  </span>
+</li>
